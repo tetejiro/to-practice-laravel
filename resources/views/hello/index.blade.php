@@ -16,32 +16,32 @@
   <form action="/hello" method="post">
   <table>
     @csrf
-    @if ($errors->has('name'))
+    @error('name')
       <tr>
         <th>エラー：</th>
-        <td>{{$errors->first('name')}}</td>
+        <td>{{$message}}</td>
       </tr>
-    @endif
+    @enderror
     <tr>
       <th>name:</th>
       <td><input type="text" name="name" value="{{old('name')}}"></td>
     </tr>
-    @if ($errors->has('mail'))
+    @error('mail')
       <tr>
         <th>エラー：</th>
-        <td>{{$errors->first('mail')}}</td>
+        <td>{{$message}}</td>
       </tr>
-    @endif
+    @enderror
     <tr>
       <th>mail:</th>
       <td><input type="text" name="mail" value="{{old('mial')}}"></td>
     </tr>
-    @if ($errors->has('age'))
+    @error('age')
       <tr>
         <th>エラー：</th>
-        <td>{{$errors->first('age')}}</td>
+        <td>{{$message}}</td>
       </tr>
-    @endif
+    @enderror
     <tr>
       <th>age:</th>
       <td><input type="text" name="age" value="{{old('age')}}"></td>
