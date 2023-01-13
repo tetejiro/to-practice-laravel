@@ -34,7 +34,7 @@
     @enderror
     <tr>
       <th>mail:</th>
-      <td><input type="text" name="mail" value="{{old('mial')}}"></td>
+      <td><input type="text" name="mail" value="{{old('mail')}}"></td>
     </tr>
     @error('age')
       <tr>
