@@ -16,39 +16,19 @@
   <form action="/hello" method="post">
   <table>
     @csrf
-    @error('name')
+    @if($errors->has('msg'))
       <tr>
-        <th>エラー：</th>
-        <td>{{$message}}</td>
+        <th>エラー</th>
+        <td>{{$errors->first('msg')}}</td>
       </tr>
-    @enderror
+    @endif
     <tr>
-      <th>name:</th>
-      <td><input type="text" name="name" value="{{old('name')}}"></td>
-    </tr>
-    @error('mail')
-      <tr>
-        <th>エラー：</th>
-        <td>{{$message}}</td>
-      </tr>
-    @enderror
-    <tr>
-      <th>mail:</th>
-      <td><input type="text" name="mail" value="{{old('mail')}}"></td>
-    </tr>
-    @error('age')
-      <tr>
-        <th>エラー：</th>
-        <td>{{$message}}</td>
-      </tr>
-    @enderror
-    <tr>
-      <th>age:</th>
-      <td><input type="text" name="age" value="{{old('age')}}"></td>
+      <th>エラー</th>
+      <td><input type="text" name="msg" value="{{old('msg')}}"></td>
     </tr>
     <tr>
       <th></th>
-      <td><input type="submit" value="send"></td>
+      <td><input type="submit" value="submit"></td>
     </tr>
   </table>
   </form>
