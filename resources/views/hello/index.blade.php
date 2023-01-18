@@ -8,28 +8,36 @@
 @endsection
 
 @section('content')
-  <p>{{$msg}}</p>
-  <form method="POST" action="/hello">
-    @if(count($errors) > 0)
-      <p>入力に問題があります。再入力してください。</p>
-    @endif
-  <form action="/hello" method="post">
-  <table>
+  <form action="/hello/add" method="post">
     @csrf
-    @if($errors->has('msg'))
-      <tr>
-        <th>エラー</th>
-        <td>{{$errors->first('msg')}}</td>
-      </tr>
-    @endif
+  <table>
     <tr>
-      <th>エラー</th>
-      <td><input type="text" name="msg" value="{{old('msg')}}"></td>
+      <th>Name</th>
+      <td><input type="text" name="name"></td>
     </tr>
     <tr>
-      <th></th>
-      <td><input type="submit" value="submit"></td>
+      <th>Mail</th>
+      <td><input type="text" name="mail"></td>
     </tr>
+    <tr>
+      <th>Age</th>
+      <td><input type="text" name="age"></td>
+    </tr>
+    <tr>
+      <th>
+        <td><input type="submit" value="send!"></td>
+      </th>
+    </tr>
+    @foreach($items as $item)
+    <tr>
+      <td>{{$item->name}}</td>
+      <td>{{$item->mail}}</td>
+      <td>{{$item->age}}</td>
+    </tr>
+    @endforeach
   </table>
   </form>
+@endsection
+@section('footer')
+copyright 2020 tuyano.
 @endsection
