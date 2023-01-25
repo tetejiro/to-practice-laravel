@@ -12,15 +12,13 @@
     <th>Name</th>
     <th>Mail</th>
     <th>Age</th>
-    @if(!empty($items))
       @foreach ($items as $item)
-        <tr>
-          <td>{{$item->name}}</td>
-          <td>{{$item->mail}}</td>
-          <td>{{$item->age}}</td>
-        </tr>
+      <tr>
+        <td>{{$item->name}}</td>
+        <td>{{$item->mail}}</td>
+        <td>{{$item->age}}</td>
+      </tr>
       @endforeach
-    @endif
   </table>
 @endsection
 

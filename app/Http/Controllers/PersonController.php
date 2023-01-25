@@ -2,12 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Person;
+use Illuminate\Http\Request;
 
 class PersonController extends Controller {
     public function index(Request $request) {
         $items = Person::all();
-        return view('person.index', ['item' => $items]);
+        // print '<pre>';
+        // print_r ($items);
+        // print '</pre>';
+
+        return view('person.index', ['items' => $items]);
     }
 }
