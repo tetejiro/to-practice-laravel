@@ -6,12 +6,13 @@ use App\Models\Person;
 use Illuminate\Http\Request;
 
 class PersonController extends Controller {
-    public function index(Request $request) {
-        $items = Person::all();
-        // print '<pre>';
-        // print_r ($items);
-        // print '</pre>';
+    public function find(Request $request) {
+        return view('person.find', ['input' => '']);
+    }
 
-        return view('person.index', ['items' => $items]);
+    public function search(Request $request) {
+        $item = Person::find($request->input);
+        $param = ['input' => $request->input, 'item' => $item];
+        return view('person.find', $param);
     }
 }
