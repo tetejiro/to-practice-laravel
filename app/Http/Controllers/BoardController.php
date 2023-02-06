@@ -1,0 +1,30 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use App\Models\Board;
+use Illuminate\Support\Facades\Validator;
+
+class BoardController extends Controller
+{
+    public function index(Request $request) {
+        $items = Board::all();
+        return view('board.index', ['items' => $items]);
+    }
+
+    public function add(Request $request) {
+        return view('board.add');
+    }
+
+    public function create(Request $request) {
+        print 'before';
+        // $this->validate($request, Board::$rules);
+        print 'after';
+        $board = new Board;
+        $form = $request->all();
+        unset($form['_token']);
+        $board->fill($form)->save();
+        return redirect('/board');
+    }
+}
