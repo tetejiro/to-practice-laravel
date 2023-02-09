@@ -18,7 +18,7 @@ class BoardController extends Controller
     }
 
     public function create(Request $request) {
-        $this->validate($request, Board::$rules);
+        // $this->validate($request, Board::$rules);
         $board = new Board;
         $form = $request->all();
         unset($form['_token']);
