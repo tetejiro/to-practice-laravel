@@ -45,7 +45,7 @@ class Person extends Model
     }
 
     // テーブルのリレーション指定
-    public function board() {
-        return $this->hasOne('App\Models\Board');
+    public function boards() {
+        return $this->hasMany('App\Models\Board');
     }
 }
