@@ -512,6 +512,7 @@ class ComposerStaticInit5c0a745d071ac3c0f4322ecaff46564f
     public static $classMap = array (
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
+        'App\\Http\\Controllers\\BoardController' => __DIR__ . '/../..' . '/app/Http/Controllers/BoardController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\HelloController' => __DIR__ . '/../..' . '/app/Http/Controllers/HelloController.php',
         'App\\Http\\Controllers\\PersonController' => __DIR__ . '/../..' . '/app/Http/Controllers/PersonController.php',
@@ -528,6 +529,7 @@ class ComposerStaticInit5c0a745d071ac3c0f4322ecaff46564f
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
         'App\\Http\\Requests\\HelloRequest' => __DIR__ . '/../..' . '/app/Http/Requests/HelloRequest.php',
         'App\\Http\\Validators\\HelloValidator' => __DIR__ . '/../..' . '/app/Http/Validators/HelloValidator.php',
+        'App\\Models\\Board' => __DIR__ . '/../..' . '/app/Models/Board.php',
         'App\\Models\\Person' => __DIR__ . '/../..' . '/app/Models/Person.php',
         'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
