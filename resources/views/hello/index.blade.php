@@ -1,4 +1,8 @@
 @extends('layouts.helloapp')
+<style>
+  .pagenation {font-size: 10px;}
+  .pagination li {display: inline-block;}
+</style>
 
 @section('title', 'index')
 
@@ -8,37 +12,24 @@
 @endsection
 
 @section('content')
-  <form action="/hello/add" method="post">
     @csrf
   <table>
     <tr>
       <th>Name</th>
-      <td><input type="text" name="name"></td>
-    </tr>
-    <tr>
       <th>Mail</th>
-      <td><input type="text" name="mail"></td>
-    </tr>
-    <tr>
       <th>Age</th>
-      <td><input type="text" name="age"></td>
-    </tr>
-    <tr>
-      <th>
-        <td><input type="submit" value="send!"></td>
-      </th>
     </tr>
     @foreach($items as $item)
     <tr>
-      <td>{{$item->id}}</td>
       <td>{{$item->name}}</td>
       <td>{{$item->mail}}</td>
       <td>{{$item->age}}</td>
     </tr>
     @endforeach
   </table>
-  </form>
+  {{$items->links()}}
 @endsection
+
 @section('footer')
 copyright 2020 tuyano.
 @endsection

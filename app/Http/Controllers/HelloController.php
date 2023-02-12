@@ -11,7 +11,8 @@ use Validator;
 
 class HelloController extends Controller {
     public function index(Request $request) {
-        $items = DB::table('people')->orderBy('age', 'asc')->get();
+        // ぺネーション
+        $items = DB::table('people')->simplePaginate(5);
         return View('hello.index', ['items' => $items]);
     }
 
