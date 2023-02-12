@@ -6,14 +6,18 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use App\Http\Requests\HelloRequest;
 use Illuminate\Support\Facades\DB;
+use App\Models\Person;
 
 use Validator;
 
 class HelloController extends Controller {
     public function index(Request $request) {
+        $sort = $request->sort;
         // ぺネーション
-        $items = DB::table('people')->simplePaginate(5);
-        return View('hello.index', ['items' => $items]);
+        $items = Person::orderBy($sort, 'asc')->paginate(5);//モデル利用
+        //$items = DB::table('people')->orderBy($sort, 'asc')->simplePaginate(5);//DBクラス利用
+        $param = ['items' => $items, 'sort' => $sort];
+        return View('hello.index', $param);
     }
 
     public function post(Request $request) {
