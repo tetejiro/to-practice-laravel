@@ -59,3 +59,6 @@ Route::post('hello/session', 'App\Http\Controllers\HelloController@ses_put');
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('hello/auth', 'App\Http\Controllers\HelloController@getAuth');
+Route::post('hello/auth', 'App\Http\Controllers\HelloController@postAuth');
